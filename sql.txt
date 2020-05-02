@@ -1,0 +1,17 @@
+2.1
+SELECT Orders.Price FROM Orders
+WHERE Orders.CustomerId is NULL and Orders.Price > 5000
+ORDER BY Orders.Price DESC ;
+2.2
+SELECT Orders.Price FROM Orders
+WHERE Orders.CustomerId is NOT NULL and Orders.Price > 5000
+ORDER BY Orders.Price;
+2.3
+SELECT Customers.id FROM Customers
+INNER JOIN Orders ON Customers.id = Orders.CustomerId 
+WHERE Orders.OrdesId > 5
+ORDER BY Customers.id ;
+2.4
+SELECT a.Adress,a.LastName as Name1,b.LastName as Name2 FROM Customers a, Customers b 
+WHERE a.id <> b.id and a.Adress = b.Adress 
+ORDER BY a.Adress ;
